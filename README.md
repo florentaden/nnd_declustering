@@ -6,6 +6,8 @@ The code ``make_declustering.py`` finds for each event of a given catalog its ne
 
 An example is provided with the [Southern California Earthquake Data Center](https://scedc.caltech.edu/eq-catalogs/) catalog from 2014 to 2019.
 
+---------------
+
 It requires the package [``mpi4py``](https://mpi4py.readthedocs.io/en/stable/) which can be simply install with:
 ```
 conda install -c anaconda mpi4py
@@ -16,6 +18,8 @@ pip install mpi4py
 ```
 for more information have a look [here](https://mpi4py.readthedocs.io/en/stable/install.html#).
 
+---------------
+
 The file needs to contain the following headers:
 	- year
 	- month
@@ -23,9 +27,10 @@ The file needs to contain the following headers:
 	- hour 
 	- minute
 	- second
-	- time: first event is 0, can be second, day, etc..)
+	- time: first event is 0, can be second, day, etc..
 	- latitude
 	- longitude
+	- depth: not taken account in the current version. However, easy to implement.
 	- magnitude
 
 The output will add the following columns:
@@ -34,6 +39,8 @@ The output will add the following columns:
 	- Nij: the nearest neighbor distance metric
 	- parent_magnitude
 	- neighbor: the index of the nearest neighbor
+
+---------------
 
 The code is able to run in serial:
 ```
