@@ -16,11 +16,30 @@ pip install mpi4py
 ```
 for more information have a look [here](https://mpi4py.readthedocs.io/en/stable/install.html#).
 
+The file needs to contain the following headers:
+	- year
+	- month
+	- day
+	- hour 
+	- minute
+	- second
+	- time: first event is 0, can be second, day, etc..)
+	- latitude
+	- longitude
+	- magnitude
+
+The output will add the following columns:
+	- Tij: the rescaled Time with the with the nearest neighbor
+        - Rij: the rescaled Distance 
+	- Nij: the nearest neighbor distance metric
+	- parent_magnitude
+	- neighbor: the index of the nearest neighbor
+
 The code is able to run in serial:
 ```
 python make_declustering.py
 ```
-or in parallel on a laptop or a node on a cluster (several nodes will be implemented soon):
+or in parallel on a laptop or a node on a cluster (>= 1 node):
 ```
 mpirun -np <number of cpu desired> python make_declustering.py
 ```
